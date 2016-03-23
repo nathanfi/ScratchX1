@@ -13,19 +13,19 @@
    ext._getDay = function() {
       var today = new Date()
       return today.getDay()
-   }
+   };
    ext._getHours = function() {
       var today = new Date()
       return today.getHours()
-   }
+   };
    ext._getMinutes = function() {
       var today = new Date()
       return today.getMinutes()
-   }
+   };
    ext._getSeconds = function() {
       var today = new Date()
       return today.getSeconds()
-   }
+   };
 
    // Block and block menu descriptions
    var descriptor = {
