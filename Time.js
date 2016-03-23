@@ -30,10 +30,10 @@
    // Block and block menu descriptions
    var descriptor = {
       blocks: [
-         ['r', 'Get Days', 'getDay']
-         ['r', 'Get Hours', 'getHours']
-         ['r', 'Get Minutes', 'getMinutes']
-         ['r', 'Get Seconds', 'getSeconds']
+         ['r', 'Days', 'getDay']
+         ['r', 'Hours', 'getHours']
+         ['r', 'Minutes', 'getMinutes']
+         ['r', 'Seconds', 'getSeconds']
       ]
    };
 
