@@ -33,7 +33,7 @@
    }
    ext._time = function(timeMenu) {
       today = new Date()
-      if (timeMenu = 'Day') {
+      if (timeMenu = 'Day of Week') {
          var day = today.getDay()
          if (day = 0 || day = 7) {
             return 'Sunday'
@@ -99,10 +99,10 @@
          ['r', 'Time', 'getHoursMinutes']
          ['r', 'Time with Seconds', 'getHoursMinutesSeconds']
          ['r', 'Display %m.displayMenu', 'displayTime', 'Hours:Minutes']
-         ['r', 'Current %m.timeMenu', 'time', 'Day']
+         ['r', 'Current %m.timeMenu', 'time', 'Day of Week']
       ],
       menus: {
-         timeMenu: ['Day', 'Hour', 'Hour 12 Clock', 'Minute', 'Second', 'Date' 'Month', 'Year'],
+         timeMenu: ['Day of Week', 'Hour', 'Hour 12 Clock', 'Minute', 'Second', 'Date' 'Month', 'Year'],
          displayMenus: ['Hours:Minutes', 'Hours:Minutes:Seconds', 'Month/Date', 'Date/Month', 'Month/Date/Year', 'Date/Month/Year']
       }
    };
