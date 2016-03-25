@@ -32,28 +32,33 @@
       }
    }
    ext._time = function(timeMenu) {
-         today = new Date()
-         if (timeMenu = 'Day') {
-            return today.getDay()
-         } else if (timeMenu = 'Hour') {
-            return today.getHours()
-         } else if (timeMenu = 'Minute') {
-            return today.getMinutes()
-         } else if (timeMenu = 'Second') {
-            return today.getSeconds()
-         } else if (timeMenu = 'Hour 12 Clock') {
-            var hours = today.getHours()
-            if (today < 12 && today > 0) {
-               return hours + " AM"
-            } else if (today == 12) {
-               return hours + " PM"
-            } else if (today == 0) {
-               return "12 AM"
-            } else if (today > 12) {
-               return hours - 12 + " PM"
-            }
+      today = new Date()
+      if (timeMenu = 'Day') {
+         return today.getDay()
+      } else if (timeMenu = 'Hour') {
+         return today.getHours()
+      } else if (timeMenu = 'Minute') {
+         return today.getMinutes()
+      } else if (timeMenu = 'Second') {
+         return today.getSeconds()
+      } else if (timeMenu = 'Hour 12 Clock') {
+         var hours = today.getHours()
+         if (today < 12 && today > 0) {
+            return hours + " AM"
+         } else if (today == 12) {
+            return hours + " PM"
+         } else if (today == 0) {
+            return "12 AM"
+         } else if (today > 12) {
+            return hours - 12 + " PM"
          }
+      } else if (timeMenu = 'Month') {
+         return today.getMonth()
+      } else if (timeMenu = 'Year') {
+         return today.getYear() + 1900
       }
+   }
+
    ext._displayTime = function(displayMenu) {
       var today = new Date()
       if (displayMenu = 'Hours:Minutes') {
@@ -62,7 +67,8 @@
          return today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
       }
    }
-      // Block and block menu descriptions
+   
+   // Block and block menu descriptions
    var descriptor = {
       blocks: [
          ['r', 'Time', 'getHoursMinutes']
@@ -71,11 +77,11 @@
          ['r', 'Current %m.timeMenu', 'time', 'Day']
       ],
       menus: {
-         timeMenu: ['Day', 'Hour', 'Hour 12 Clock', 'Minute', 'Second'],
+         timeMenu: ['Day', 'Hour', 'Hour 12 Clock', 'Minute', 'Second', 'Month', 'Year'],
          displayMenus: ['Hours:Minutes', 'Hours:Minutes:Seconds']
       }
    };
-
+   
    // Register the extension
    ScratchExtensions.register('Time', descriptor, ext);
 })({});
