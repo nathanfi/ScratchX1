@@ -86,6 +86,10 @@
          return today.getMonth() + "/" + today.getDate() + "/" + today.getYear()
       } else if (displayMenu = 'Date/Month/Year') {
          return today.getDate() + "/" + today.getMonth() + "/" + today.getYear()
+      } else if (displayMenu = 'Month/Date') {
+         return today.getMonth() + "/" + today.getDate() + "/" + today.getYear()
+      } else if (displayMenu = 'Date/Month') {
+         return today.getDate() + "/" + today.getMonth() + "/" + today.getYear()
       }
    }
    
@@ -99,7 +103,7 @@
       ],
       menus: {
          timeMenu: ['Day', 'Hour', 'Hour 12 Clock', 'Minute', 'Second', 'Date' 'Month', 'Year'],
-         displayMenus: ['Hours:Minutes', 'Hours:Minutes:Seconds']
+         displayMenus: ['Hours:Minutes', 'Hours:Minutes:Seconds', 'Month/Date', 'Date/Month', 'Month/Date/Year', 'Date/Month/Year']
       }
    };
    
