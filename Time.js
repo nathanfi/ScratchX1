@@ -78,7 +78,7 @@
          ['r', 'Current %m.timeMenu', 'time', 'Day of Week']
       ],
       menus: {
-         timeMenu: ['Day of Week', 'Hour', 'Hour 24 Clock', 'Minute', 'Second', 'Date' 'Month', 'Year'],
+         timeMenu: ['Day of Week', 'Hour', 'Hour 24 Clock', 'Minute', 'Second', 'Date', 'Month', 'Year'],
          displayMenu: ['Hours:Minutes', 'Hours:Minutes:Seconds', 'Month/Date', 'Date/Month', 'Month/Date/Year', 'Date/Month/Year']
       }
    };
