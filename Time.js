@@ -15,65 +15,65 @@
       if (timeMenu == 'Day of Week') {
          var day = today.getDay()
          if (day == 0 || day == 7) {
-            return 'Sunday'
+            return 'Sunday';
          } else if (day == 1) {
-            return 'Monday'
+            return 'Monday';
          } else if (day == 2) {
-            return 'Tuesday'
+            return 'Tuesday';
          } else if (day == 3) {
-            return 'Wednesday'
+            return 'Wednesday';
          } else if (day == 4) {
-            return 'Thursday'
+            return 'Thursday';
          } else if (day == 5) {
-            return 'Friday'
+            return 'Friday';
          } else if (day == 6) {
-            return 'Saturday'
+            return 'Saturday';
          }
       } else if (timeMenu == 'Minute') {
-         return today.getMinutes()
+         return today.getMinutes();
       } else if (timeMenu == 'Second') {
-         return today.getSeconds()
+         return today.getSeconds();
       } else if (timeMenu == 'Hour') {
-         var hours = today.getHours()
+         var hours = today.getHours();
          if (today <= 12 && today > 0) {
-            return hours
+            return hours;
          } else if (today == 0) {
-            return 12
+            return 12;
          } else if (today > 12) {
-            return hours - 12
+            return hours - 12;
          }
       } else if (timeMenu == 'Hour 24 Clock') {
-         return today.getHours()
+         return today.getHours();
       } else if (timeMenu == 'Date') {
-         return today.getDate()
+         return today.getDate();
       } else if (timeMenu == 'Month') {
-         return today.getMonth()
+         return today.getMonth();
       } else if (timeMenu == 'Year') {
-         return today.getYear() + 1900
+         return today.getFullYear();
       }
    }
 
    ext._displayTime = function(displayMenu) {
-      var today = new Date()
+      var today = new Date();
       if (displayMenu == 'Hours:Minutes') {
-         return today.getHours() + ":" + today.getMinutes()
+         return today.getHours() + ":" + today.getMinutes();
       } else if (displayMenu == 'Hours:Minutes:Seconds') {
-         return today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+         return today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
       } else if (displayMenu == 'Month/Date/Year') {
-         return today.getMonth() + "/" + today.getDate() + "/" + today.getYear()
+         return today.getMonth() + "/" + today.getDate() + "/" + today.getYear();
       } else if (displayMenu == 'Date/Month/Year') {
-         return today.getDate() + "/" + today.getMonth() + "/" + today.getYear()
+         return today.getDate() + "/" + today.getMonth() + "/" + today.getYear();
       } else if (displayMenu == 'Month/Date') {
-         return today.getMonth() + "/" + today.getDate() + "/" + today.getYear()
+         return today.getMonth() + "/" + today.getDate() + "/" + today.getYear();
       } else if (displayMenu == 'Date/Month') {
-         return today.getDate() + "/" + today.getMonth() + "/" + today.getYear()
+         return today.getDate() + "/" + today.getMonth() + "/" + today.getYear();
       }
    }
-   
+
    // Block and block menu descriptions
    var descriptor = {
       blocks: [
-         ['r', 'Display %m.displayMenu', 'displayTime', 'Hours:Minutes']
+         ['r', 'Display %m.displayMenu', 'displayTime', 'Hours:Minutes'],
          ['r', 'Current %m.timeMenu', 'time', 'Day of Week']
       ],
       menus: {
@@ -81,7 +81,7 @@
          displayMenus: ['Hours:Minutes', 'Hours:Minutes:Seconds', 'Month/Date', 'Date/Month', 'Month/Date/Year', 'Date/Month/Year']
       }
    };
-   
+
    // Register the extension
    ScratchExtensions.register('Time', descriptor, ext);
 })({});
