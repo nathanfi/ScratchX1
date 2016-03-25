@@ -73,8 +73,6 @@
    // Block and block menu descriptions
    var descriptor = {
       blocks: [
-         ['r', 'Time', 'getHoursMinutes']
-         ['r', 'Time with Seconds', 'getHoursMinutesSeconds']
          ['r', 'Display %m.displayMenu', 'displayTime', 'Hours:Minutes']
          ['r', 'Current %m.timeMenu', 'time', 'Day of Week']
       ],
