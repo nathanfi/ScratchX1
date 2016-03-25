@@ -10,27 +10,6 @@
          msg: 'Ready'
       };
    };
-   ext._getHoursMinutes = function() {
-      var today = new Date()
-      return today.getHours() + ":" + today.getMinutes()
-   }
-   ext._getHoursMinutesSeconds = function() {
-      var today = new Date()
-      return today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
-   }
-   ext._getHoursPM = function() {
-      var today = new Date()
-      var hours = today.getHours()
-      if (today < 12 && today > 0) {
-         return hours + " AM"
-      } else if (today == 12) {
-         return hours + " PM"
-      } else if (today == 0) {
-         return "12 AM"
-      } else if (today > 12) {
-         return hours - 12 + " PM"
-      }
-   }
    ext._time = function(timeMenu) {
       today = new Date()
       if (timeMenu = 'Day of Week') {
@@ -50,23 +29,21 @@
          } else if (day = 6) {
             return 'Saturday'
          }
-      } else if (timeMenu = 'Hour') {
-         return today.getHours()
       } else if (timeMenu = 'Minute') {
          return today.getMinutes()
       } else if (timeMenu = 'Second') {
          return today.getSeconds()
-      } else if (timeMenu = 'Hour 12 Clock') {
+      } else if (timeMenu = 'Hour') {
          var hours = today.getHours()
-         if (today < 12 && today > 0) {
-            return hours + " AM"
-         } else if (today == 12) {
-            return hours + " PM"
+         if (today <= 12 && today > 0) {
+            return hours
          } else if (today == 0) {
-            return "12 AM"
+            return 12
          } else if (today > 12) {
-            return hours - 12 + " PM"
+            return hours - 12
          }
+      } else if (timeMenu = 'Hour 24 Clock') {
+         return today.getHours()
       } else if (timeMenu = 'Date') {
          return today.getDate()
       } else if (timeMenu = 'Month') {
@@ -102,7 +79,7 @@
          ['r', 'Current %m.timeMenu', 'time', 'Day of Week']
       ],
       menus: {
-         timeMenu: ['Day of Week', 'Hour', 'Hour 12 Clock', 'Minute', 'Second', 'Date' 'Month', 'Year'],
+         timeMenu: ['Day of Week', 'Hour', 'Hour 24 Clock', 'Minute', 'Second', 'Date' 'Month', 'Year'],
          displayMenus: ['Hours:Minutes', 'Hours:Minutes:Seconds', 'Month/Date', 'Date/Month', 'Month/Date/Year', 'Date/Month/Year']
       }
    };
