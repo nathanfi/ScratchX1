@@ -26,6 +26,15 @@
       var today = new Date()
       return today.getSeconds()
    }
+   ext._getHoursMinutes = function() {
+      var today = new Date()
+      return today.getHours() + ":" + today.getMinutes()
+   }
+   ext._getHoursMinutesSeconds = function() {
+      var today = new Date()
+      return today.getHours() + ":" today.getMinutes() + ":" + today.getSeconds()
+   }
+   ext.
 
    // Block and block menu descriptions
    var descriptor = {
@@ -34,6 +43,8 @@
          ['r', 'Hours', 'getHours']
          ['r', 'Minutes', 'getMinutes']
          ['r', 'Seconds', 'getSeconds']
+         ['r', 'Time', 'getHoursMinutes']
+         ['r', 'Time with Seconds', 'getHoursMinutesSeconds']
       ]
    };
 
