@@ -36,11 +36,11 @@
          return today.getSeconds();
       } else if (timeMenu == 'Hour') {
          var hours = today.getHours();
-         if (today <= 12 && today > 0) {
+         if (hours <= 12 && hours > 0) {
             return hours;
-         } else if (today == 0) {
+         } else if (hours == 0) {
             return 12;
-         } else if (today > 12) {
+         } else if (hours > 12) {
             return hours - 12;
          }
       } else if (timeMenu == 'Hour 24 Clock') {
@@ -56,10 +56,15 @@
 
    ext.displayTime = function(displayMenu) {
       var today = new Date();
+      var hours = today.getHours();
+         if (hours == 0) {
+            hours = 12;
+         } else if (today > 12) {
+            hours = hours - 12;
       if (displayMenu == 'Hours:Minutes') {
-         return today.getHours() + ":" + today.getMinutes();
+         return hours + ":" + today.getMinutes();
       } else if (displayMenu == 'Hours:Minutes:Seconds') {
-         return today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+         return hours + ":" + today.getMinutes() + ":" + today.getSeconds();
       } else if (displayMenu == 'Month/Date/Year') {
          return today.getMonth() + "/" + today.getDate() + "/" + today.getYear();
       } else if (displayMenu == 'Date/Month/Year') {
