@@ -61,6 +61,7 @@
             hours = 12;
          } else if (today > 12) {
             hours = hours - 12;
+          }
       if (displayMenu == 'Hours:Minutes') {
          return hours + ":" + today.getMinutes();
       } else if (displayMenu == 'Hours:Minutes:Seconds') {
