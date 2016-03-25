@@ -32,9 +32,21 @@
    }
    ext._getHoursMinutesSeconds = function() {
       var today = new Date()
-      return today.getHours() + ":" today.getMinutes() + ":" + today.getSeconds()
+      return today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
    }
-   ext.
+   ext._getHoursPM = function() {
+      var today = new Date()
+      var hours = today.getHours()
+      if (today < 12 && today > 0) {
+         return hours + " AM"
+      } else if (today == 12) {
+         return hours + " PM"
+      } else if (today == 0) {
+         return "12 AM"
+      } else if (today > 12) {
+         return hours-12 + " PM"
+      }
+   }
 
    // Block and block menu descriptions
    var descriptor = {
