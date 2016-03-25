@@ -10,7 +10,8 @@
          msg: 'Ready'
       };
    };
-   ext._time = function(timeMenu) {
+
+   ext.time = function(timeMenu) {
       today = new Date()
       if (timeMenu == 'Day of Week') {
          var day = today.getDay()
@@ -53,7 +54,7 @@
       }
    }
 
-   ext._displayTime = function(displayMenu) {
+   ext.displayTime = function(displayMenu) {
       var today = new Date();
       if (displayMenu == 'Hours:Minutes') {
          return today.getHours() + ":" + today.getMinutes();
