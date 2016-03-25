@@ -52,11 +52,12 @@
    var descriptor = {
       blocks: [
          ['r', 'Days', 'getDay']
-         ['r', 'Hours', 'getHours']
+         ['r', 'Hours 24 Clock', 'getHours']
          ['r', 'Minutes', 'getMinutes']
          ['r', 'Seconds', 'getSeconds']
          ['r', 'Time', 'getHoursMinutes']
          ['r', 'Time with Seconds', 'getHoursMinutesSeconds']
+         ['r', 'Hours', 'getHoursPM']
       ]
    };
 
