@@ -34,7 +34,22 @@
    ext._time = function(timeMenu) {
       today = new Date()
       if (timeMenu = 'Day') {
-         return today.getDay()
+         var day = today.getDay()
+         if (day = 0 || day = 7) {
+            return 'Sunday'
+         } else if (day = 1) {
+            return 'Monday'
+         } else if (day = 2) {
+            return 'Tuesday'
+         } else if (day = 3) {
+            return 'Wednesday'
+         } else if (day = 4) {
+            return 'Thursday'
+         } else if (day = 5) {
+            return 'Friday'
+         } else if (day = 6) {
+            return 'Saturday'
+         }
       } else if (timeMenu = 'Hour') {
          return today.getHours()
       } else if (timeMenu = 'Minute') {
@@ -52,6 +67,8 @@
          } else if (today > 12) {
             return hours - 12 + " PM"
          }
+      } else if (timeMenu = 'Date') {
+         return today.getDate()
       } else if (timeMenu = 'Month') {
          return today.getMonth()
       } else if (timeMenu = 'Year') {
@@ -65,6 +82,10 @@
          return today.getHours() + ":" + today.getMinutes()
       } else if (displayMenu = 'Hours:Minutes:Seconds') {
          return today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+      } else if (displayMenu = 'Month/Date/Year') {
+         return today.getMonth() + "/" + today.getDate() + "/" + today.getYear()
+      } else if (displayMenu = 'Date/Month/Year') {
+         return today.getDate() + "/" + today.getMonth() + "/" + today.getYear()
       }
    }
    
@@ -77,7 +98,7 @@
          ['r', 'Current %m.timeMenu', 'time', 'Day']
       ],
       menus: {
-         timeMenu: ['Day', 'Hour', 'Hour 12 Clock', 'Minute', 'Second', 'Month', 'Year'],
+         timeMenu: ['Day', 'Hour', 'Hour 12 Clock', 'Minute', 'Second', 'Date' 'Month', 'Year'],
          displayMenus: ['Hours:Minutes', 'Hours:Minutes:Seconds']
       }
    };
