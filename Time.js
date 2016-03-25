@@ -11,8 +11,9 @@
       };
    };
 
-   ext.time = function(timeMenu) {
-      today = new Date()
+   ext.time = function() {
+      var timeMenu = 'Day of Week'
+      var today = new Date()
       if (timeMenu == 'Day of Week') {
          var day = today.getDay()
          if (day == 0 || day == 7) {
@@ -54,7 +55,8 @@
       }
    }
 
-   ext.displayTime = function(displayMenu) {
+   ext.displayTime = function() {
+     var displayMenu = 'Hours:Minutes'
       var today = new Date();
       if (displayMenu == 'Hours:Minutes') {
          return today.getHours() + ":" + today.getMinutes();
@@ -74,11 +76,11 @@
    // Block and block menu descriptions
    var descriptor = {
       blocks: [
-         ['r', 'Display %m.displayMenu', 'displayTime', 'Hours:Minutes'],
-         ['r', 'Current %m.timeMenu', 'time', 'Day of Week']
+         ['r', 'Display %m.displayMenu', 'displayTime'],
+         ['r', 'Current %m.timeMenu', 'time']
       ],
       menus: {
-         timeMenu: ['Day of Week', 'Hour', 'Hour 24 Clock', 'Minute', 'Second', 'Date' 'Month', 'Year'],
+         timeMenus: ['Day of Week', 'Hour', 'Hour 24 Clock', 'Minute', 'Second', 'Date' 'Month', 'Year'],
          displayMenu: ['Hours:Minutes', 'Hours:Minutes:Seconds', 'Month/Date', 'Date/Month', 'Month/Date/Year', 'Date/Month/Year']
       }
    };
