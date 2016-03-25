@@ -31,17 +31,17 @@
          return hours - 12 + " PM"
       }
    }
-   ext._time = function(menu) {
+   ext._time = function(timeMenu) {
          today = new Date()
-         if (menu = 'Day') {
+         if (timeMenu = 'Day') {
             return today.getDay()
-         } else if (menu = 'Hour') {
+         } else if (timeMenu = 'Hour') {
             return today.getHours()
-         } else if (menu = 'Minute') {
+         } else if (timeMenu = 'Minute') {
             return today.getMinutes()
-         } else if (menu = 'Second') {
+         } else if (timeMenu = 'Second') {
             return today.getSeconds()
-         } else if (menu = 'Hour 12 Clock') {
+         } else if (timeMenu = 'Hour 12 Clock') {
             var hours = today.getHours()
             if (today < 12 && today > 0) {
                return hours + " AM"
@@ -54,15 +54,25 @@
             }
          }
       }
+   ext._displayTime = function(displayMenu) {
+      var today = new Date()
+      if (displayMenu = 'Hours:Minutes') {
+         return today.getHours() + ":" + today.getMinutes()
+      } else if (displayMenu = 'Hours:Minutes:Seconds') {
+         return today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+      }
+   }
       // Block and block menu descriptions
    var descriptor = {
       blocks: [
          ['r', 'Time', 'getHoursMinutes']
          ['r', 'Time with Seconds', 'getHoursMinutesSeconds']
-         ['r', 'Current %m.time', 'time']
+         ['r', 'Display %m.displayMenu', 'displayTime', 'Hours:Minutes']
+         ['r', 'Current %m.timeMenu', 'time', 'Day']
       ],
       menus: {
-         time: ['Day', 'Hour', 'Hour 12 Clock', 'Minute', 'Second']
+         timeMenu: ['Day', 'Hour', 'Hour 12 Clock', 'Minute', 'Second'],
+         displayMenus: ['Hours:Minutes', 'Hours:Minutes:Seconds']
       }
    };
 
