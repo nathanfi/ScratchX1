@@ -12,10 +12,10 @@
    };
 
    ext.time = function(timeMenu) {
-      var today = new Date()
+      var today = new Date();
       if (timeMenu == 'Day of Week') {
-         var day = today.getDay()
-         if (day == 0 || day == 7) {
+         var day = today.getDay();
+         if (day === 0 || day === 7) {
             return 'Sunday';
          } else if (day == 1) {
             return 'Monday';
@@ -38,7 +38,7 @@
          var hours = today.getHours();
          if (hours <= 12 && hours > 0) {
             return hours;
-         } else if (hours == 0) {
+         } else if (hours === 0) {
             return 12;
          } else if (hours > 12) {
             return hours - 12;
@@ -52,12 +52,12 @@
       } else if (timeMenu == 'Year') {
          return today.getFullYear();
       }
-   }
+   };
 
    ext.displayTime = function(displayMenu) {
       var today = new Date();
       var hours = today.getHours();
-         if (hours == 0) {
+         if (hours === 0) {
             hours = 12;
          } else if (today > 12) {
             hours = hours - 12;
@@ -75,7 +75,7 @@
       } else if (displayMenu == 'Date/Month') {
          return today.getDate() + "/" + today.getMonth() + "/" + today.getYear();
       }
-   }
+   };
 
    // Block and block menu descriptions
    var descriptor = {
