@@ -59,7 +59,7 @@
       var hours = today.getHours();
          if (hours === 0) {
             hours = 12;
-         } else if (today > 12) {
+         } else if (hours > 12) {
             hours = hours - 12;
           }
       if (displayMenu == 'Hours:Minutes') {
