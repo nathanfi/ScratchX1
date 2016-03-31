@@ -62,18 +62,19 @@
          } else if (hours > 12) {
             hours = hours - 12;
           }
+      var month = today.getMonth() + 1;
       if (displayMenu == 'Hours:Minutes') {
          return hours + ":" + today.getMinutes();
       } else if (displayMenu == 'Hours:Minutes:Seconds') {
          return hours + ":" + today.getMinutes() + ":" + today.getSeconds();
       } else if (displayMenu == 'Month/Date/Year') {
-         return today.getMonth() + "/" + today.getDate() + "/" + today.getYear();
+         return month + "/" + today.getDate() + "/" + today.getFullYear();
       } else if (displayMenu == 'Date/Month/Year') {
-         return today.getDate() + "/" + today.getMonth() + "/" + today.getYear();
+         return today.getDate() + "/" + month + "/" + today.getFullYear();
       } else if (displayMenu == 'Month/Date') {
-         return today.getMonth() + "/" + today.getDate() + "/" + today.getYear();
+         return month + "/" + today.getDate();
       } else if (displayMenu == 'Date/Month') {
-         return today.getDate() + "/" + today.getMonth() + "/" + today.getYear();
+         return today.getDate() + "/" + month;
       }
    };
 
